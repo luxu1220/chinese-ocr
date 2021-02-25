@@ -3,8 +3,8 @@
 
 # 安装
 1. clone 项目  `git clone https://github.com/WestonLu/chinese-ocr.git`
-2. build 后端镜像，在 chinese-ocr/backend 文件夹内执行 `docker build -t luxu1220/docker-backend .`
-3. build mysql镜像，在 chinese-ocr/mysql 文件夹内执行 `docker build -t luxu1220/mysql .`
+2. build 后端镜像，在 chinese-ocr/backend 文件夹内执行 `docker build -t ocr-backend .`
+3. build mysql镜像，在 chinese-ocr/mysql 文件夹内执行 `docker build -t ocr-mysql .`
 4. 使用 docker-compose 启动服务， 在 chinese-ocr 文件夹内执行 `docker-compose up -d`
 
 如果 build 镜像时使用了其他 tag，请自行修改 docker-compose.yaml 中的镜像名。
