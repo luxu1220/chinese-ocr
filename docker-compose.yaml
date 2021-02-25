@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    image: luxu1220/mysql
+    ports:
+      - "3306:3306"
+  app:
+    image: luxu1220/docker-backend
+    links:
+      - db
+    ports:
+      - "5005:5005"
