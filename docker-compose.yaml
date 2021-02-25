@@ -4,9 +4,19 @@ services:
     image: luxu1220/mysql
     ports:
       - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/mysql-init-files:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD", "root" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
   app:
     image: luxu1220/docker-backend
     links:
       - db
     ports:
       - "5005:5005"
+    depends_on:
+      db:
+        condition: service_healthy
